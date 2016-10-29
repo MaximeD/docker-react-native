@@ -1,3 +1,7 @@
+# Disclaimer
+
+This is a fork from [gilesp's react_native](https://github.com/gilesp/docker/tree/master/react_native).
+
 # Docker container for React Native Android development
 
 This dockerfile will build a debian based container that encapsulates node, the android sdk and react native.
@@ -16,7 +20,7 @@ On your host system, you'll need to install the android udev rules if you want t
 
     wget -S -O - http://source.android.com/source/51-android.rules | sed "s/<username>/$USER/" | sudo tee >/dev/null /etc/udev/rules.d/51-android.rules
     sudo udevadm control --reload-rules
-    
+
 ## Scripts
 
 There are a few simple shell scripts to make interacting with the container easier, so you'll probably want to symlink those to your /home/bin directory.
@@ -37,7 +41,7 @@ Simply runs react-native start but handles port forwarding
 
     $ cd AwesomeProject
     $ run_server.sh
-    
+
 ### react_bash.sh
 
 This is the main script that I use. It gives you a command prompt on the container and is handy for day to day development work. I currently use this to run the app on my phone, connected via usb as follows:
