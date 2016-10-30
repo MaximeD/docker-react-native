@@ -11,7 +11,7 @@ ENV PATH $PATH:node_modules/.bin
 
 # Install Java
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -q && \
-	apt-get install -qy --no-install-recommends sudo default-jdk
+	apt-get install -qy --no-install-recommends sudo python-dev default-jdk
 
 
 # Install Android SDK
@@ -54,6 +54,11 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     npm cache clear
 
+
+# Install watchman
+RUN git clone https://github.com/facebook/watchman.git
+RUN cd watchman && git checkout v4.7.0 && ./autogen.sh && ./configure && make && make install
+RUN rm -rf watchman
 
 # Default react-native web server port
 EXPOSE 8081
