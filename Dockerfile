@@ -51,10 +51,10 @@ RUN echo "y" | android update sdk \
     --all \
     --filter platform-tools,android-23,build-tools-23.0.1,extra-android-support,extra-android-m2repository,sys-img-x86_64-android-23,extra-google-m2repository
 
+# Install yarn
+RUN npm install -g yarn
 
-##
-## Install react native
-##
+# Install react native
 RUN npm install -g react-native-cli@0.1.7
 
 # Clean up when done.
