@@ -43,13 +43,9 @@ RUN cd /usr/local && \
     rm $ANDROID_SDK_FILE
 
 # Install android tools and system-image.
-
 ENV PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.1
-RUN echo "y" | android update sdk \
-    --no-ui \
-    --force \
-    --all \
-    --filter platform-tools,android-23,build-tools-23.0.1,extra-android-support,extra-android-m2repository,sys-img-x86_64-android-23,extra-google-m2repository
+RUN (while true ; do sleep 5; echo y; done) | android update sdk --no-ui --force --all --filter platform-tools,android-23,build-tools-23.0.1,extra-android-support,extra-android-m2repository,sys-img-x86_64-android-23,extra-google-m2repository
+
 
 # Install yarn
 RUN npm install -g yarn
