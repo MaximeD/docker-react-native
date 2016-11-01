@@ -10,8 +10,8 @@ ENV PATH $PATH:node_modules/.bin
 
 
 # Install Java
-RUN DEBIAN_FRONTEND=noninteractive apt-get update -q && \
-	apt-get install -qy --no-install-recommends sudo python-dev default-jdk
+RUN apt-get update -q && \
+	apt-get install -qy --no-install-recommends python-dev default-jdk
 
 
 # Install Android SDK
@@ -67,10 +67,7 @@ EXPOSE 8081
 # User creation
 ENV USERNAME dev
 
-RUN adduser --disabled-password --gecos '' $USERNAME && \
-    echo $USERNAME:$USERNAME | chpasswd && \
-    echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
-    adduser $USERNAME sudo
+RUN adduser --disabled-password --gecos '' $USERNAME
 
 
 # Add Tini
