@@ -47,12 +47,17 @@ dev> react-native android
 dev> react-native run-android
 ```
 
-### Live reload
+### Hot reload
 
 ```
 dev> watchman watch .
 ```
 
+
+To enable it on your phone,
+shake it, and select `Enable Hot Reloading`.
+You will also need to access `Dev Settings > Debug server host & port for device`
+and enter `localhost:8081`.
 
 # Install udev rules
 
