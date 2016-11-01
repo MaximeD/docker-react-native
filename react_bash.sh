@@ -1,15 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CONTAINER_NAME=reactnative
 
 # Function to determine if named docker instance is already running
 check_running () {
-    retval=0
-    running=$(docker inspect --format="{{ .State.Running }}" "$CONTAINER_NAME" 2> /dev/null)
-    if [ "$running" == "true" ]; then
-        retval=1
-    fi
-    return "$retval"
+  retval=0
+  running=$(docker inspect --format="{{ .State.Running }}" "$CONTAINER_NAME" 2> /dev/null)
+  if [ "$running" == "true" ]; then
+    retval=1
+  fi
+  return "$retval"
 }
 
 check_running
@@ -32,4 +32,3 @@ docker run \
        -e DISPLAY="$DISPLAY" \
        --name $CONTAINER_NAME \
        react-native /bin/bash
-       
