@@ -71,7 +71,7 @@ RUN adduser --disabled-password --gecos '' $USERNAME
 
 
 # Add Tini
-ENV TINI_VERSION v0.6.0
+ENV TINI_VERSION v0.10.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
