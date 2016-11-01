@@ -47,7 +47,7 @@ RUN (while true ; do sleep 5; echo y; done) | android update sdk --no-ui --force
 RUN npm install -g yarn
 
 ## Install react native
-RUN npm install -g react-native-cli@0.1.7
+RUN npm install -g react-native-cli@1.0.0
 
 ## Clean up when done
 RUN apt-get clean && \
