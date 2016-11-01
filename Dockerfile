@@ -17,7 +17,7 @@ RUN apt-get update -q && \
 # Install Android SDK
 
 ## Set correct environment variables.
-ENV ANDROID_SDK_FILE android-sdk_r24.0.1-linux.tgz
+ENV ANDROID_SDK_FILE android-sdk_r24.4.1-linux.tgz
 ENV ANDROID_SDK_URL http://dl.google.com/android/$ANDROID_SDK_FILE
 
 ## Install 32bit support for Android SDK
